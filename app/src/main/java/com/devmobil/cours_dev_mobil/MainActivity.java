@@ -1,10 +1,10 @@
 package com.devmobil.cours_dev_mobil;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView textview = findViewById(R.id.todolist);
-        ScrollView scrollView = findViewById(R.id.toDoBox);
+        RecyclerView recyclerView = findViewById(R.id.todobox);
         FloatingActionButton button = findViewById(R.id.floatingActionButton);
 
         button.setOnClickListener(v -> {
