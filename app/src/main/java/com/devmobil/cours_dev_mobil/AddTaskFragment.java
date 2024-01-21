@@ -17,7 +17,6 @@ public class AddTaskFragment extends Fragment {
 
     private EditText taskEditText;
     private Button addButton;
-    private WeakReference<Context> contextWeakReference;
     private AppDatabase appDatabase;
 
     public AddTaskFragment() {
@@ -32,18 +31,10 @@ public class AddTaskFragment extends Fragment {
         // Initialisez votre instance d'AppDatabase
         appDatabase = AppDatabase.getDatabase(requireContext());
 
-        // Utilisez une WeakReference pour éviter les fuites de mémoire
-        contextWeakReference = new WeakReference<>(requireContext());
-
         taskEditText = view.findViewById(R.id.editTextTask);
         addButton = view.findViewById(R.id.buttonAddTask);
 
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onAddButtonClicked();
-            }
-        });
+        addButton.setOnClickListener(v -> onAddButtonClicked());
 
         return view;
     }
@@ -51,9 +42,9 @@ public class AddTaskFragment extends Fragment {
     private void onAddButtonClicked() {
         Log.d("AddTaskFragment", "onAddButtonClicked called");
         String taskDescription = taskEditText.getText().toString();
-        Context context = contextWeakReference.get();
+        Context context = requireContext();
 
-        if (context != null && !taskDescription.isEmpty()) {
+        if (!taskDescription.isEmpty()) {
             // Créez une instance de TaskEntity avec la description de la tâche
             TaskEntity taskEntity = new TaskEntity(taskDescription);
 

@@ -28,10 +28,7 @@ public class TaskEntity {
         return description;
     }
 
-    // Setter si nécessaire
-    public void setDescription(String description) {
-        this.description = description;
-    }
+
 
 
     // Ajoutez une méthode getter pour l'ID
