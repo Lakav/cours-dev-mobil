@@ -16,6 +16,24 @@ public class TaskEntity {
     private String taskName;
     private String taskDate;
 
+    @ColumnInfo(name = "description")
+    private String description;
+
+    // Ajoutez un constructeur qui prend une chaîne de caractères comme argument
+    public TaskEntity(String description) {
+        this.description = description;
+    }
+    // Getter pour le champ 'description'
+    public String getDescription() {
+        return description;
+    }
+
+    // Setter si nécessaire
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
     // Ajoutez une méthode getter pour l'ID
     public int getId() {
         return id;

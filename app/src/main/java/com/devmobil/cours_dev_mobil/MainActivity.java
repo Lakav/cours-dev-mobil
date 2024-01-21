@@ -3,6 +3,7 @@ package com.devmobil.cours_dev_mobil;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
         new GetTasksAsyncTask().execute();
 
         button.setOnClickListener(v -> {
-            // Vous pouvez ajouter ici le code pour traiter le clic du bouton
-            // Par exemple, ajouter une tâche à la base de données
-            // Ou effectuer une autre action en fonction de vos besoins
-            textview.setText("Hello World");
+            // Remplace le contenu actuel par le fragment d'ajout de tâches
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new AddTaskFragment())
+                    .addToBackStack(null)
+                    .commit();
         });
+
     }
 
     // Tâche asynchrone pour obtenir les tâches depuis la base de données
@@ -55,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
             recyclerView.setAdapter(taskAdapter);
         }
+    }
+
+    // Méthode pour actualiser la liste des tâches depuis le fragment d'ajout de tâches
+    public void refreshTasks() {
+        new GetTasksAsyncTask().execute();
     }
 
     @Override

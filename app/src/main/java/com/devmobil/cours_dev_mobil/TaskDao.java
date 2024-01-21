@@ -9,6 +9,13 @@ import androidx.room.Update;
 import java.util.List;
 @Dao
 public interface TaskDao {
+
+    @Query("SELECT * FROM tasks")
+    List<TaskEntity> getAllTasks();
+
+    @Insert
+    void insertTask(TaskEntity task);
+
     @Insert
     void insert(TaskEntity task);
 
@@ -18,6 +25,4 @@ public interface TaskDao {
     @Delete
     void delete(TaskEntity task);
 
-    @Query("SELECT * FROM tasks")
-    List<TaskEntity> getAllTasks();
 }
