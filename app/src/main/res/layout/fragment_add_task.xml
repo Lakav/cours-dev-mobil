@@ -6,11 +6,11 @@
     android:orientation="vertical">
 
     <EditText
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:layout_gravity="center"
         android:id="@+id/editTextTask"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="Task description" />
 
     <Button
