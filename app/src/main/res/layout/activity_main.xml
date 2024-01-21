@@ -38,18 +38,20 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/todobox"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="353dp"
+        android:layout_height="347dp"
         android:layout_margin="45dp"
         app:layout_constraintBottom_toBottomOf="@+id/fragment_container"
         app:layout_constraintEnd_toEndOf="@+id/fragment_container"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fragment_container"
-        app:layout_goneMarginTop="200dp" />
+        app:layout_constraintTop_toTopOf="@+id/fragment_container" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

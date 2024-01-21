@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         new GetTasksAsyncTask().execute();
 
         button.setOnClickListener(v -> {
-            // Remplace le contenu actuel par le fragment d'ajout de tâches
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new AddTaskFragment())
                     .addToBackStack(null)
