@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
+
 
 public class AddTaskFragment extends Fragment {
 
@@ -37,6 +39,7 @@ public class AddTaskFragment extends Fragment {
     }
 
     private void onAddButtonClicked() {
+        Log.d("AddTaskFragment", "onAddButtonClicked called");
         String taskDescription = taskEditText.getText().toString();
 
         if (!taskDescription.isEmpty()) {
