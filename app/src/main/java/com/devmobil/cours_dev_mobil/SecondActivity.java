@@ -3,7 +3,6 @@ package com.devmobil.cours_dev_mobil;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -11,7 +10,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
 
     private EditText editText;
     private CalendarView calendarView;
@@ -36,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Log.d("MainActivity", "Nom: " + editText + ", Date: " + calendarView);
                 // Récupérer les données des éléments de l'interface utilisateur
                 String name = editText.getText().toString();
                 long selectedDate = calendarView.getDate();
@@ -58,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         values.put("date", date);
 
         // Insérer les données dans la base de données
-        long newRowId = maBaseDeDonnees.insert("tache", null, values);
+        long newRowId = maBaseDeDonnees.insert("MaTable", null, values);
 
         // Fermer la base de données
         maBaseDeDonnees.close();

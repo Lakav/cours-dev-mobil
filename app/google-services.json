@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "519217548722",
+    "firebase_url": "https://tpmobile-21673-default-rtdb.firebaseio.com",
+    "project_id": "tpmobile-21673",
+    "storage_bucket": "tpmobile-21673.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519217548722:android:093ca3d06b00bcd908e8ab",
+        "android_client_info": {
+          "package_name": "com.devmobil.cours_dev_mobil"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcHTaJvyIqVmYF0psEAYwfbS0gyHu9ViA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
